@@ -21,7 +21,7 @@ SemiBonsai/
 │  ├─ reasoner/                       # Reasoner (query planning + execution)
 │  ├─ router/                         # Router (LLM routing under budgets)
 │  └─ utils/                          # Helper functions (evaluation, IO, prompts, etc.)
-├─ datasets/
+├─ datasets.zip/
 │  ├─ annotations/                    # Statistics for complexity factors of tables/questions
 │  ├─ complex_subsets/                # Curated complex subsets
 │  └─ test_dataset/                   # Example benchmark folder
@@ -68,7 +68,7 @@ Only **two fields must be configured by the user**:
 
 ## 4) How to Run SemiBonsai
 
-Below is the standard pipeline: Structurer → Resolver → Reasoner → Evaluation.
+Below is the standard pipeline: Structurer → Resolver → Reasoner → Evaluation. You can use our benchmarks by unzip the datasets.zip.
 
 ### 4.1 Structurer 
 ```bash
