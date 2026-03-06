@@ -1,0 +1,48 @@
+# =========================
+# User-specific paths (MUST configure)
+# =========================
+# base_folder: where datasets live (input)
+base_folder: "/Users/fengluo/Desktop/code/SemiBonsai/datasets"
+
+# out_folder: where all outputs/results will be written (output)
+out_folder: "/Users/fengluo/Desktop/code/SemiBonsai/result"
+
+
+# =========================
+# Dataset configs (usually no need to change)
+# Paths are RELATIVE to base_folder/out_folder
+# =========================
+datasets:
+  test_dataset:
+    # QA file (relative to base_folder/<dataset>/)
+    qa_file: "data/single_tab_qa.jsonl"
+
+    # Table directory (relative to base_folder/<dataset>/)
+    table_dir: "data/table"
+
+    # Intermediate outputs under out_folder/<dataset>/
+    table_meta_dir: "our/table_processed/table_meta"
+    table_graph_dir: "our/table_processed/graph"
+
+    # Final outputs under out_folder/<dataset>/
+    result_dir: "our/test_result"
+    diamb_dir: "our/test_diambq"
+
+
+# =========================
+# Router configs (usually no need to change)
+# Paths are RELATIVE to base_folder/out_folder depending on your router script:
+# - train/eval are typically under out_folder/<dataset>/... OR base_folder/<dataset>/...
+#   (your updated router version uses base_folder/out_folder + ds_cfg paths)
+# =========================
+llm_routing:
+  datasets:
+    test_dataset:
+      # training/eval input for router:
+      # relative to base_folder/<dataset>/  (if your router joins with base_folder)
+      train_path: "input_data/test_train.json"
+      eval_path: "input_data/test_eval.json"
+
+      # router output json:
+      # relative to out_folder/<dataset>/our/
+      out_json: "our/llm_router_output/llm_selection.json"
